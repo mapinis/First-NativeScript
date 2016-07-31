@@ -1,7 +1,24 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-  <StackLayout>
-    <Label text="Tap the button" class="title"/>
-    <Button text="TAP" tap="{{ onTap }}" />
-    <Label text="{{ message }}" class="message" textWrap="true"/>
-  </StackLayout>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" loaded="pageLoaded">
+  <TabView id="buttonTabView">
+      <TabView.items>
+        <TabViewItem  title="Button--">
+          <TabViewItem.view>
+            <StackLayout>
+              <Label text="Tap the button" class="title"/>
+              <Button text="TAP" tap="{{ onTap }}" />
+              <Label text="{{ message }}" class="message" textWrap="true"/>
+            </StackLayout>
+          </TabViewItem.view>
+        </TabViewItem>
+        <TabViewItem title="Button++">
+          <TabViewItem.view>            
+            <StackLayout>
+              <Label text="Now, tap this button" class="title"/>
+              <Button text="Tap Me" tap="{{ onSecondButtonTap }}"/>
+              <Label text="{{ secondMessage }}" class="message" textWrap="true" />
+            </StackLayout>
+          </TabViewItem.view>
+        </TabViewItem>
+      </TabView.items>
+  </TabView>
 </Page>
