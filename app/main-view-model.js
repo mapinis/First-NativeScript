@@ -10,18 +10,12 @@ function getMessage(counter) {
     }
 }
 
-function pageLoaded(args) {
-    var page = args.object;
-    var tabView = view.getViewByID(page, "buttonTabView");
-    tabView.selectedIndex = 1;
-}
-
 function createViewModel() {
     var viewModel = new Observable();
     viewModel.counter = 42;
     viewModel.secondCounter = 0;
-    viewModel.message = getMessage(viewModel.counter);
-    viewModel.secondMessage = "# of times that you have tapped the button: " + viewModel.secondCounter;
+    viewModel.message = "Tap the button!"
+    viewModel.secondMessage = "# of times that you have tapped the button:   " + viewModel.secondCounter;
 
     viewModel.onTap = function() {
         this.counter--;
